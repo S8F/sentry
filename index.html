@@ -227,13 +227,22 @@
       <pattern id="g" width="48" height="48" patternUnits="userSpaceOnUse">
         <path d="M48 0H0V48" fill="none" stroke="currentColor" stroke-width=".5"/>
       </pattern>
+      <filter id="soften" x="-30%" y="-30%" width="160%" height="160%">
+        <feGaussianBlur stdDeviation="18"/>
+      </filter>
+      <mask id="clear-copy" maskUnits="userSpaceOnUse" x="-40" y="0" width="1320" height="700">
+        <rect x="-40" y="0" width="1320" height="700" fill="#fff"/>
+        <rect x="94" y="244" width="542" height="227" fill="#000" filter="url(#soften)"/>
+      </mask>
     </defs>
     <rect width="1200" height="700" fill="url(#g)" color="var(--rule)" opacity=".55"/>
-    <line x1="0" y1="430" x2="1200" y2="430" stroke="var(--muted)" stroke-width="1" stroke-dasharray="2 7" opacity=".8"/>
     <rect class="fade-in" x="560" y="430" width="230" height="86" fill="var(--short-wash)"/>
-    <path class="draw"
-          d="M-20 300 L110 336 L232 312 L338 372 L452 402 L548 424 L618 486 L700 502 L764 452 L806 424 L900 372 L1010 336 L1120 258 L1230 214"
-          fill="none" stroke="var(--ink-2)" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" opacity=".85"/>
+    <g mask="url(#clear-copy)">
+      <line x1="0" y1="430" x2="1200" y2="430" stroke="var(--muted)" stroke-width="1" stroke-dasharray="2 7" opacity=".8"/>
+      <path class="draw"
+            d="M-20 300 L110 336 L232 312 L338 372 L452 402 L548 424 L618 486 L700 502 L764 452 L806 424 L900 372 L1010 336 L1120 258 L1230 214"
+            fill="none" stroke="var(--ink-2)" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" opacity=".85"/>
+    </g>
     <g class="fade-in">
       <line x1="806" y1="430" x2="1200" y2="430" stroke="var(--long)" stroke-width="3"/>
       <circle class="pulse" cx="806" cy="424" r="4" fill="var(--long)"/>
