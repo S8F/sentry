@@ -210,9 +210,9 @@
   .rails span{ font-size:.9375rem; color:var(--ink-2); }
 
   .shots{ display:grid; gap:1rem; }
-  .shot{ margin:0; border:1px solid var(--rule); border-radius:10px; overflow:hidden; background:var(--sunk); box-shadow:var(--shadow); }
-  .shot img{ display:block; width:100%; height:auto; }
-  .shot figcaption{ font-family:"IBM Plex Mono", ui-monospace, monospace; font-size:.6875rem; line-height:1.65; color:var(--muted); padding:.85rem 1.05rem .95rem; border-top:1px solid var(--rule); background:var(--panel); }
+  .shot{ margin:0; border:1px solid var(--rule); border-radius:10px; overflow-x:auto; overflow-y:hidden; -webkit-overflow-scrolling:touch; background:var(--sunk); box-shadow:var(--shadow); position:relative; }
+  .shot img{ display:block; width:100%; height:auto; min-width:40rem; }
+  .shot figcaption{ font-family:"IBM Plex Mono", ui-monospace, monospace; font-size:.6875rem; line-height:1.65; color:var(--muted); padding:.85rem 1.05rem .95rem; border-top:1px solid var(--rule); background:var(--panel); position:sticky; left:0; }
 
   .status-box{ border:1px solid var(--short); border-radius:10px; background:var(--short-wash); padding:clamp(1.25rem,3vw,2rem); display:grid; gap:.85rem; }
   .status-box h2{ font-size:clamp(1.25rem,2.4vw,1.625rem); }
